@@ -1,5 +1,8 @@
 name: shell commands
-on: [push,pull_request]
+on: 
+  push:
+  repository_dispatch:  
+    
 jobs:
   run-shell-command:
       runs-on: ubuntu-latest
