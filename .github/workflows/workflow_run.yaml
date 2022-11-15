@@ -1,7 +1,7 @@
 on:
   workflow_run:
-    workflows: ["simple"]
-    types: ["completed"]
+    workflows: [action]
+    types: [completed]
 
 jobs:
   on-success:
