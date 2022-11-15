@@ -1,6 +1,6 @@
 on:
   workflow_run:
-    workflows: [action]
+    workflows: [Actions Workflow]
     types: [completed]
 
 jobs:
