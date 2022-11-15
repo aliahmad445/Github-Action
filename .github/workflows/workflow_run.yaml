@@ -1,7 +1,10 @@
+name: WorkflowRun
 on:
   workflow_run:
-    workflows: [Actions Workflow]
-    types: [completed]
+    workflows: 
+      - Actions Workflow
+    types: 
+      - completed
 
 jobs:
   on-success:
