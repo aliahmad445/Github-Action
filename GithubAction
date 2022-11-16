@@ -1,0 +1,33 @@
+jobs:
+  job1:
+  job2:
+    needs: job1
+  job3:
+    needs: [job1, job2]
+
+
+jobs:
+  job1:
+  job2:
+    needs: job1
+  job3:
+    if: ${{ always() }}
+    needs: [job1, job2]
+
+In this example, job3 uses the always() conditional expression so that it always runs after job1 and job2 have completed, regardless of whether they were successful.
+
+
+Example: Only run job for specific repository
+
+name: example-workflow
+on: [push]
+jobs:
+  production-deploy:
+    if: github.repository == 'octo-org/octo-repo-prod'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
