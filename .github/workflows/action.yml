@@ -2,8 +2,13 @@ name: Actions Workflow
 
 on: 
     push:
-    repository_dispatch:
-      types: [build]
+     inputs:
+      name:
+      # Friendly description to show in the UI instead of 'name'
+       description: 'Person to greet'
+       required: true
+       default: 'Worl
+
 jobs: 
   run-github-actions: 
     runs-on: ubuntu-latest
@@ -17,7 +22,8 @@ jobs:
       - name: List Files After Checkout
         run: |
           pwd
-          ls -a
+          ls -ltr
+          echo ${{inputs.name}}
       - name: Simple JS Action
         id: greet 
         uses: actions/hello-world-javascript-action@v1
