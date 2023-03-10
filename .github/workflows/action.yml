@@ -23,6 +23,8 @@ jobs:
         run : |
           chmod +x check.sh
           ./check.sh
+      - name: state
+        run : echo "${{ env.action_state }}" # This will output 'yellow'
       - name: Simple JS Action
         id: greet 
         uses: actions/hello-world-javascript-action@v1
