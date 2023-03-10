@@ -2,13 +2,7 @@ name: Actions Workflow
 
 on: 
     push:
-     inputs:
-      name:
-      # Friendly description to show in the UI instead of 'name'
-       description: 'Person to greet'
-       required: true
-       default: 'Worl
-
+     
 jobs: 
   run-github-actions: 
     runs-on: ubuntu-latest
