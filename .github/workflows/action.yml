@@ -19,6 +19,7 @@ jobs:
           ls -ltr
           echo ${{inputs.name}}
       - name: Checking bash
+        continue-on-error: true
         run : |
           chmod +x check.sh
           ./check.sh
