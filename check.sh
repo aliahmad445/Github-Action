@@ -2,8 +2,9 @@
 
 echo ali
 count=0;
+echo count;
 
-if [$count = 0]; then
+if [ $count = 0 ]; then
 echo 1
 echo 2
 
