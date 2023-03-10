@@ -19,7 +19,9 @@ jobs:
           ls -ltr
           echo ${{inputs.name}}
       - name: Checking bash
-        run : ./check.sh
+        run : |
+          chmod +x check.sh
+          ./check.sh
       - name: Simple JS Action
         id: greet 
         uses: actions/hello-world-javascript-action@v1
