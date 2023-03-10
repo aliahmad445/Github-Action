@@ -9,7 +9,6 @@ echo 1
 echo 2
 echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
 echo "action_state=yellow" >> $GITHUB_ENV
-echo "${{ env.action_state }}" # This will output 'yellow'
 fi
 
 echo tttttt
