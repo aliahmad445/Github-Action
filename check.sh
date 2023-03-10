@@ -7,8 +7,8 @@ echo $count;
 if [ $count = 0 ]; then
 echo 1
 echo 2
-exit 1
+echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
 fi
 
 echo tttttt
-exit 1
+exit 0
