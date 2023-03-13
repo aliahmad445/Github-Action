@@ -1,7 +1,12 @@
 name: Actions Workflow 
 
 on: 
-    push:
+ pull_request:
+  branches:
+   - master
+   - 'v*'
+  types:
+    - opened
      
 jobs: 
   run-github-actions: 
