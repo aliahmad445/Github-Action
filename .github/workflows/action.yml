@@ -37,5 +37,5 @@ jobs:
       - uses: GuillaumeFalourd/diff-action@v1
         with:
           first_file_path: Testfile.txt
-          second_file_path: Testfile.txt
+          second_file_path: check.sh
           expected_result: PASSED  
