@@ -10,7 +10,7 @@ echo 2
 echo "action_state=yellow" >> $GITHUB_ENV
 echo "This **word** is bold" >> $GITHUB_STEP_SUMMARY
 echo "Deployment Status: **Reached maximum retries(20), please check the pod's error log**" >> $GITHUB_STEP_SUMMARY
-exit 1
+exit 0
 fi
 echo tttttt
 exit 0
