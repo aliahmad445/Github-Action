@@ -46,7 +46,7 @@ jobs:
       - id: diff
         run: |
           echo Comparing files
-          if diff Testfile.txt Testfile.txt >/dev/null; then
+          if diff Testfile.txt check.sh >/dev/null; then
             echo "✅ OUTPUT value EQUAL to EXPECTED value!"
           else
             echo "❌ OUTPUT value NOT EQUAL to EXPECTED value!"
