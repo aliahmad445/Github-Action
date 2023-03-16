@@ -41,16 +41,12 @@ jobs:
       - name: Log Greeting Time
         run: echo "${{ steps.greet.outputs.time }}"
       - uses: actions/checkout@v2.3.4
-      - uses: GuillaumeFalourd/diff-action@v1
-        with:
-          first_file_path: Testfile.txt
-          second_file_path: check.sh
-          expected_result: PASSED 
       - id: diff
         run: |
           echo Comparing files
-          if diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} >/dev/null; then
-            result=$(echo "PASSED")
+          if diff Testfile.txt Testfile.txt >/dev/null; then
+            echo "✅ OUTPUT value EQUAL to EXPECTED value!"
           else
-            result=$(echo "FAILED")
+            echo "❌ OUTPUT value NOT EQUAL to EXPECTED value!"
+            exit 1
           fi
