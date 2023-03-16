@@ -1,12 +1,16 @@
 name: Actions Workflow 
 
 on: 
+ workflow_dispatch:
  pull_request:
   branches:
    - master
+   - test
    - 'v*'
   types:
     - opened
+    - reopened
+    - closed
      
 jobs: 
   run-github-actions: 
@@ -37,3 +41,15 @@ jobs:
           who-to-greet: John
       - name: Log Greeting Time
         run: echo "${{ steps.greet.outputs.time }}"
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}"
+      - uses: actions/checkout@v2.3.4
+      - id: diff
+        run: |
+          echo Comparing files
+          if diff Testfile.txt check.sh >/dev/null; then
+            echo "✅ OUTPUT value EQUAL to EXPECTED value!"
+          else
+            echo "❌ OUTPUT value NOT EQUAL to EXPECTED value!"
+            exit 1
+          fi
