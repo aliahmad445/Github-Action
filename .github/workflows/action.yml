@@ -37,3 +37,11 @@ jobs:
           who-to-greet: John
       - name: Log Greeting Time
         run: echo "${{ steps.greet.outputs.time }}"
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}"
+      - uses: actions/checkout@v2.3.4
+      - uses: GuillaumeFalourd/diff-action@v1
+        with:
+          first_file_path: Testfile.txt
+          second_file_path: check.sh
+          expected_result: PASSED    
